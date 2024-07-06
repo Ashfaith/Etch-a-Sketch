@@ -2,19 +2,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 #game-space {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
     justify-content: center; 
     align-items: center;
-    max-width: 400px;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
 }
 
-.tile-size {
-    height: 20px;
-    width: 20px;
+.tile {
     background-color: blue;
+}
+
+.colour {
+    background-color: black;
 }
