@@ -5,15 +5,23 @@ let tile;
 
 
 gridBtn.addEventListener('click', () => {
-    tileAmnt = prompt("How many tiles would you like?");
-    if (tileAmnt === null){
-        return
+    let tilePrompt = prompt("Choose the length of tiles for the canvas");
+    if (tilePrompt < 10 || tilePrompt > 100){
+        do {
+            alert("Length of sides must be between 10 and 100!");
+            tilePrompt = prompt("Choose the length of tiles for the canvas");;
+            if (tilePrompt === null){
+                return
+            } 
+        } while (tilePrompt < 10 || tilePrompt > 100);
     } else {
-    clearSpace();
-    makeGrid();
-    draw();
+        tileAmnt = tilePrompt;
+        clearSpace();
+        makeGrid();
+        draw();
     }
 });
+
 
 function makeGrid() {
     for (let i = 0 ; i < tileAmnt ; i++) {
